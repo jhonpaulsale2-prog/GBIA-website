@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace Bible Integrated Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!--NAVIGATION-->
+    <header class="site-header">
+        <div class="container nav">
+            <a href="#home" class="brand">
+                <img width="80px" src="image/logo.jpg" alt="Grace Bible Integrated Acaddemy logo" class="brand-logo" id="logo">
+                <span class brand-text>Grace Bible<br>Integrated Academy</span>
+            </a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="flase"><span></span><span></span><span></span>
+            </button>
+               <nav class="nav-links" id="navLinks">
+               <a href="#about">About</a>
+               <a href="#mission">Mission & Vission</a>
+               <a href="#programs">Programs</a>
+               <a href="#people">Our People</a>
+               <a href="#contact" class="btn btn-small">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+      
+        <!--hero-->
+        <section class="hero" id="home">
+            <div class="container hero-inner">
+                <hi>Learning rooted in faith,<br>from Grade School, High School, to College</hi>
+                <p>Grace Bible Integrated Academy helps sttudents to grow in knowledge, character, and love for God</p>
+                <div class="hero-actions">
+                    <a ref="#contact" class="btn" href="enroll.html">Enroll Now</a>
+                    <a href="#programs" class="btn btn-outline">See Our Programs</a>
+                </div>
+            </div>
+        </section>
+
+         <!-- ABOUT -->
+           <section class="section" id="about">
+            <div class="container narrow">
+                <h2>About Our School</h2>
+                <p> Grace Bible Integrated Academy is a Christian school serving students from elementary up to college. Write a short history of your school here: when it was founded, who started it, and what makes your school special.</p>
+            </div>
+           </section>
+
+           <!-- MISSION & VISION -->
+            <section class="section alt" id="mission">
+                <div class="container two-col">
+                    <article class="card">
+                        <h2>Our Mission</h2>
+                        <p>Grace Bible Integrated Academy endeavors to help young people develop and mature in a positive, Bible-centered environment that integrates faith and learning by emphasizing Christians ambassadors for Christ who will make lasting impact wherever they minister.</p>
+                    </article>
+                    <article class="card">
+                        <h2>Our Vision</h2>
+                        <p>Grace Bible Integrated Academy is committed to providing a sustainable Bible-centered education integrated with holistic training in preparing culturally diverse and intelligent students leading to a life commitment and service to God and society.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- PROGRAMS -->
+    <section class="section" id="programs">
+      <div class="container">
+        <h2 class="center">Our Programs</h2>
+        <div class="grid three">
+          <article class="program">
+            <h3>Elementary</h3>
+            <p>A caring start where children build strong basics and learn Bible values.</p>
+          </article>
+          <article class="program">
+            <h3>High School</h3>
+            <p>Academic preparation together with spiritual and character formation.</p>
+          </article>
+          <article class="program">
+            <h3>College</h3>
+            <p>Higher education programs that prepare students to serve in their field and community.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PEOPLE -->
+    <section class="section alt" id="people">
+      <div class="container">
+        <h2 class="center">Our People</h2>
+
+        <!-- Owner and Principal (edit here) -->
+        <div class="leaders">
+          <article class="leader">
+            <img src="images/owner.jpg" alt="Owner" class="photo" data-name="Owner Name">
+            <h3>Owner Name</h3>
+            <p class="role">Owner / Founder</p>
+            <p>Write a short message or background of the owner here.</p>
+          </article>
+          <article class="leader">
+            <img src="images/principal.jpg" alt="Principal" class="photo" data-name="Principal Name">
+            <h3>Principal Name</h3>
+            <p class="role">Principal</p>
+            <p>Write a short message or background of the principal here.</p>
+          </article>
+        </div>
+
+        <h3 class="center faculty-title">Our Teachers</h3>
+        <div class="tabs" id="tabs" role="tablist">
+          <button class="tab active" data-level="all">All</button>
+          <button class="tab" data-level="Elementary">Elementary</button>
+          <button class="tab" data-level="High School">High School</button>
+          <button class="tab" data-level="College">College</button>
+        </div>
+        <!-- Teachers are loaded from script.js -->
+        <div class="grid four" id="teacherGrid"></div>
+      </div>
+    </section>
+
+     <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container narrow center">
+        <h2>Contact Us</h2>
+        <p>Visit us or send a message to ask about enrollment.</p>
+        <ul class="contact-list">
+          <li><strong>Address:</strong> school address here</li>
+          <li><strong>Phone:</strong> 09XX XXX XXXX</li>
+          <li><strong>Email:</strong> school@email.com</li>
+          <li><strong>Facebook:</strong> facebook.com/schoolpage</li>
+        </ul>
+      </div>
+    </section>
+    </main>
+
+    <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Grace Bible Integrated Academy. All rights reserved.</p>
+    </div>
+  </footer>
+
+   <script src="script.js"></script>
+</body>
+</html>

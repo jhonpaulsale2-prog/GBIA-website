@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enrollment – Grace Bible Integrated Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- style.css gives the same look as the main website; enroll.css adds the form design -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="enroll.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="image/logo.jpg" alt="Grace Bible Integrated Academy logo" class="brand-logo" id="logo">
+        <span class="brand-text">Grace Bible<br>Integrated Academy</span>
+      </a>
+      <a href="index.html" class="btn btn-small">Back to Website</a>
+    </div>
+  </header>
+
+  <main class="section alt">
+    <div class="container form-wrap">
+      <h1 class="form-title">Enrollment Form</h1>
+      <p class="form-intro">Fill out the form below. Fields marked with <span class="req">*</span> are required.</p>
+
+      <form id="enrollForm" novalidate>
+
+        <fieldset>
+          <legend>1. Level of Enrollment</legend>
+          <div class="row">
+            <div class="field">
+              <label for="level">Level <span class="req">*</span></label>
+              <select id="level" name="level" required>
+                <option value="">Select level</option>
+                <option>Elementary</option>
+                <option>High School</option>
+                <option>College</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="grade" id="gradeLabel">Grade / Year <span class="req">*</span></label>
+              <select id="grade" name="grade" required disabled>
+                <option value="">Select level first</option>
+              </select>
+            </div>
+          </div>
+          <div class="field hidden" id="courseField">
+            <label for="course">Course / Program <span class="req">*</span></label>
+            <input type="text" id="course" name="course" placeholder="Example: BS in Education">
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="studentType">Student Type <span class="req">*</span></label>
+              <select id="studentType" name="studentType" required>
+                <option value="">Select</option>
+                <option>New student</option>
+                <option>Old student</option>
+                <option>Transferee</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="schoolYear">School Year <span class="req">*</span></label>
+              <input type="text" id="schoolYear" name="schoolYear" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Student Information</legend>
+          <div class="row">
+            <div class="field"><label for="firstName">First name <span class="req">*</span></label><input type="text" id="firstName" name="firstName" required></div>
+            <div class="field"><label for="middleName">Middle name</label><input type="text" id="middleName" name="middleName"></div>
+            <div class="field"><label for="lastName">Last name <span class="req">*</span></label><input type="text" id="lastName" name="lastName" required></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="birthdate">Date of birth <span class="req">*</span></label><input type="date" id="birthdate" name="birthdate" required></div>
+            <div class="field">
+              <label for="gender">Sex <span class="req">*</span></label>
+              <select id="gender" name="gender" required><option value="">Select</option><option>Male</option><option>Female</option></select>
+            </div>
+            <div class="field"><label for="religion">Religion</label><input type="text" id="religion" name="religion"></div>
+          </div>
+          <div class="field"><label for="address">Home address <span class="req">*</span></label><input type="text" id="address" name="address" required></div>
+          <div class="field"><label for="prevSchool">Previous school attended</label><input type="text" id="prevSchool" name="prevSchool"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Parent / Guardian Information</legend>
+          <div class="row">
+            <div class="field"><label for="guardian">Full name <span class="req">*</span></label><input type="text" id="guardian" name="guardian" required></div>
+            <div class="field"><label for="relationship">Relationship <span class="req">*</span></label><input type="text" id="relationship" name="relationship" placeholder="Mother, Father, Guardian" required></div>
+          </div>
+          <div class="row">
+            <div class="field"><label for="phone">Mobile number <span class="req">*</span></label><input type="tel" id="phone" name="phone" placeholder="09XX XXX XXXX" required></div>
+            <div class="field"><label for="email">Email</label><input type="email" id="email" name="email"></div>
+          </div>
+          <div class="field"><label for="occupation">Occupation</label><input type="text" id="occupation" name="occupation"></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>4. Requirements Checklist</legend>
+          <p class="hint">Check the documents you will submit to the school office.</p>
+          <div class="checks" id="checks"></div>
+        </fieldset>
+
+        <label class="agree">
+          <input type="checkbox" id="agree" required>
+          <span>I confirm that the information above is true and correct. <span class="req">*</span></span>
+        </label>
+
+        <p class="error-msg" id="errorMsg" role="alert"></p>
+        <div class="actions">
+          <button type="submit" class="btn">Review &amp; Submit</button>
+          <button type="reset" class="btn btn-ghost" id="resetBtn">Clear Form</button>
+        </div>
+      </form>
+
+      <!-- SUMMARY (shows after the form is filled correctly) -->
+      <section id="summary" class="summary hidden" aria-live="polite">
+        <h2>Enrollment Summary</h2>
+        <div id="summaryBody"></div>
+        <p class="hint">Please send this summary to the school or bring a printed copy to the office.</p>
+        <div class="actions">
+          <a class="btn" id="emailBtn" href="#">Send by Email</a>
+          <button type="button" class="btn btn-ghost" id="printBtn">Print / Save as PDF</button>
+          <button type="button" class="btn btn-ghost" id="editBtn">Edit Form</button>
+          <button type="button" class="btn" id="sendBtn">Submit Enrollment</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><p>&copy; <span id="year"></span> Grace Bible Integrated Academy. All rights reserved.</p></div>
+  </footer>
+
+  <script src="enroll.js"></script>
+</body>
+</html>

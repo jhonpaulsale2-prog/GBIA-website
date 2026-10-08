@@ -1,0 +1,54 @@
+/* Extra styles for the enrollment form (works together with style.css) */
+.form-wrap{width:min(860px,94%);background:var(--white);padding:40px;border-radius:var(--radius);border-top:6px solid var(--blue-700)}
+.form-title{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:8px}
+.form-intro{color:var(--muted);margin-bottom:26px}
+.req{color:#c0392b}
+.hidden{display:none!important}
+
+fieldset{border:1px solid #d6e3f7;border-radius:var(--radius);padding:22px 22px 8px;margin-bottom:24px}
+legend{font-family:"Merriweather",Georgia,serif;font-weight:700;color:var(--blue-900);padding:0 10px;font-size:1.05rem}
+
+.row{display:flex;gap:16px;flex-wrap:wrap}
+.field{flex:1 1 200px;margin-bottom:16px}
+label{display:block;font-weight:700;font-size:.92rem;margin-bottom:6px;color:var(--blue-900)}
+input[type="text"],input[type="tel"],input[type="email"],input[type="date"],select{
+  width:100%;padding:12px 14px;border:2px solid #cfdcf0;border-radius:8px;font:inherit;color:var(--text);background:var(--white)}
+input:focus,select:focus{outline:none;border-color:var(--blue-500);box-shadow:0 0 0 3px rgba(43,125,233,.18)}
+input.invalid,select.invalid{border-color:#c0392b;background:#fff6f5}
+select:disabled{background:#f1f5fb;cursor:not-allowed}
+
+.hint{color:var(--muted);font-size:.92rem;margin-bottom:12px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;padding-bottom:12px}
+.checks label,.agree{display:flex;align-items:flex-start;gap:10px;font-weight:600;color:var(--text);cursor:pointer}
+.checks input,.agree input{width:20px;height:20px;margin-top:3px;accent-color:var(--blue-700);flex:none}
+.agree{margin-bottom:18px}
+
+.error-msg{color:#c0392b;font-weight:700;margin-bottom:14px;min-height:1.2em}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-ghost{background:var(--white);color:var(--blue-700)}
+.btn-ghost:hover{background:var(--blue-100);color:var(--blue-900)}
+
+/* Summary */
+.summary{margin-top:10px}
+.summary h2{margin-bottom:16px}
+.summary-block{border:1px solid #d6e3f7;border-radius:var(--radius);padding:16px 20px;margin-bottom:16px}
+.summary-block h3{font-size:1rem;margin-bottom:8px}
+.summary-block dl{display:grid;grid-template-columns:170px 1fr;gap:4px 14px}
+.summary-block dt{font-weight:700;color:var(--muted)}
+.summary-block dd{word-break:break-word}
+
+@media (max-width:640px){
+  .form-wrap{padding:24px 18px}
+  .checks{grid-template-columns:1fr}
+  .summary-block dl{grid-template-columns:1fr}
+  .summary-block dt{margin-top:6px}
+  .actions .btn{width:100%;text-align:center}
+}
+
+/* Printing: only the summary shows */
+@media print{
+  .site-header,.footer,#enrollForm,.actions,.form-intro,.form-title,.hint{display:none!important}
+  .section.alt{background:#fff;padding:0}
+  .form-wrap{border:0;padding:0;box-shadow:none}
+  .summary.hidden{display:block!important}
+}
